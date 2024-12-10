@@ -1,0 +1,1942 @@
+/* CSS Reset */
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* prettier-ignore */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* prettier-ignore */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+  line-height: 1;
+  font-family: Inter, sans-serif;
+  background-color: white;
+}
+/* prettier-ignore */
+ol, ul {
+	list-style: none;
+}
+/* prettier-ignore */
+blockquote, q {
+	quotes: none;
+}
+/* prettier-ignore */
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ------------------------------------------------------------------- min css starter------------------------------------------- */
+
+/* ------------------------------------------Navbar styling---------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1a1a;
+  color: white;
+  padding: 10px 20px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.burger-menu {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.burger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+.nav-links {
+  display: none; 
+  flex-direction: column;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  width: 100%; 
+  background-color: #1b1a1a;
+  z-index: 1000;
+}
+
+.nav-links.active {
+  display: flex; 
+}
+
+.nav-item {
+  padding: 10px 20px;
+  position: relative; 
+}
+
+.nav-item > a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-item .dropdown {
+  display: none; 
+  flex-direction: column;
+  position: relative; 
+  background-color: #444;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.nav-item:hover .dropdown {
+  display: flex; 
+}
+
+.nav-item .dropdown li {
+  margin: 5px 0;
+}
+
+.nav-item .dropdown a {
+  color: white;
+  padding: 5px 0;
+  text-decoration: none;
+}
+
+/*----------------------------------------------------------------------styling af forside--------------------------------------------------*/
+/*---------styling af forside billede----------*/
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+/*-------------styling af sektioner---------*/
+.section-frivillig,
+.section-feedback,
+.section-koncerter {
+  max-width: 100%; 
+  margin: 0 auto; 
+  padding: 0 1rem;
+  box-sizing: border-box; 
+}
+.button_frivillig,
+.button_feedback,
+.button_godsbanen,
+.button_kommende_koncerter {
+  display: block;
+  margin: 1.5rem auto; 
+  padding: 0.75rem 1.5rem;
+  background-color: #c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  text-align: center;
+  max-width: 150px;
+  font-size: 0.8rem;
+}
+
+/*---------styling af blive frivillig------*/
+.section-frivillig {
+  line-height: 1.8; 
+  display: grid;
+  grid-template-areas: "a" "b" "c";
+  grid-template-columns: 1fr;
+}
+.desktop-only {
+  display: none; 
+}
+
+.section-frivillig h2 {
+  font-size: 1.2rem; 
+  text-align: left; 
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+  font-weight: bold; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+
+.section-frivillig p {
+  font-size: 0.8rem; 
+  text-align: left; 
+  margin-bottom: 1.5rem; 
+  color: #333; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+.section-frivillig img {
+  max-width: 85%; 
+  height: auto; 
+  margin: 1rem auto;
+  display: block; 
+}
+
+/*----------styling kommende koncerter sektion ----*/
+
+.section-koncerter {
+  margin-top: 1.8rem;
+  text-align: center;
+  padding: 1rem;
+  background-color: #131313;
+  color: white;
+}
+
+.section-koncerter h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* ----Slider styling til kommende koncerter sektion-- */
+.slider-container {
+  display: flex; 
+  overflow-x: auto; 
+  gap: 1rem; 
+  list-style: none; 
+  padding: 1rem 0;
+  scrollbar-width: none; 
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none; 
+}
+
+.koncert {
+  flex: 0 0 80%; /* Hvert kort fylder 80% af skærmen på mobil */
+  background: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+  color: black;
+}
+
+.koncert figure {
+  margin: 0;
+  padding: 1rem;
+}
+
+.koncert img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.koncert h3 {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.koncert time {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.button_kommende_koncerter:hover {
+  background-color: #900;
+}
+
+/*------- styling af del din oplevelse/anmeldelse sektion----*/
+.section-feedback {
+  line-height: 1.8; 
+  display: grid; 
+  grid-template-areas:
+    "image"
+    "text"
+    "button"; 
+  grid-template-columns: 1fr; 
+  gap: 1.5rem; 
+  padding: 1rem; 
+}
+
+.section-feedback h2 {
+  font-size: 1.2rem; 
+  text-align: left; 
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+  font-weight: bold; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+
+.section-feedback p {
+  font-size: 0.8rem; 
+  text-align: left; 
+  margin-bottom: 1.5rem; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+.section-feedback img {
+  max-width: 85%; 
+  height: auto; 
+  margin: 1rem auto; 
+  display: block; 
+  margin-top: 3rem;
+}
+.desktop-only {
+  display: none; 
+}
+/*------ styling af godsbanen sektion -----*/
+
+/* Sektion med gradient foroven og forneden */
+.section-godsbanen {
+  display: grid;
+  grid-template-areas:
+    "text"
+    "image"
+    "button"; 
+  grid-template-columns: 1fr;
+  line-height: 1.8; 
+  padding: 2rem 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #c00 15%,
+    #c00 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: white;
+}
+
+/* Styling af teksten */
+.section-godsbanen h2 {
+  font-size: 1.2rem; 
+  text-align: left; 
+  margin-top: 1rem;
+  margin-bottom: 1rem; 
+  font-weight: bold; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+
+.section-godsbanen p {
+  font-size: 0.8rem; 
+  text-align: left;
+  margin-bottom: 1.5rem; 
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+
+/*--- Billede af godsbanen styling---*/
+.section-godsbanen img {
+  max-width: 90%; 
+  height: auto; 
+  margin: 1rem auto; 
+  display: block; 
+}
+
+.button_godsbanen:hover {
+  background-color: rgb(226, 67, 67);
+}
+
+/* Footer baggrund og generel tekstfarve */
+.footer-container {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+  background-color: #1b1a1a;
+  color: white; 
+  padding: 2rem; 
+}
+
+/*-------------------------------------------- Generel styling for footer sektioner-------------------------------------------------------- */
+.footer-sektioner {
+  margin-left: 5%; /* Flytter sektioner lidt ind fra kanten */
+}
+
+/* Overskrifter */
+.footer-overskrift {
+  font-size: x-large;
+  padding-bottom: 1rem; 
+  font-weight: 600; 
+  color: white; 
+}
+
+/* Links i footer */
+.some-links a {
+  text-decoration: none; 
+  color: white; 
+}
+
+.some-links a:hover {
+  color: #aaa; 
+}
+
+/* Tilføj hvid kant og hvid tekst til email felt */
+.email-felt {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 2px solid white;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  color: white; 
+  background-color: transparent; /* Gør baggrund gennemsigtig */
+  max-width: 100%;
+}
+
+/* Tilføj hover-effekt til email felt */
+.email-felt:focus {
+  border-color: #aaa; 
+  outline: none; 
+}
+/* --------------------------------------------------------------musikanmeldelse side styling--------------------------------------------------- */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+  margin: 2rem auto; 
+  max-width: 1200px; 
+  padding: 0 1rem; 
+}
+
+.line {
+  flex-grow: 1; 
+  height: 2px; 
+  background-color: black; 
+}
+
+.centered-header {
+  font-size: 1.5rem; /* Gør teksten større */
+  font-weight: bold;
+  text-align: center; /* Sørger for, at teksten er centreret */
+  margin: 0; /* Fjerner standard margin */
+  white-space: nowrap; /* Sørger for, at teksten ikke brydes */
+}
+.review {
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem; /* Luft på indersiden af containeren */
+  padding-left: 1rem; /* Ekstra luft til venstre */
+  padding-right: 1rem; /* Ekstra luft til højre */
+}
+
+.review {
+  margin-bottom: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 2rem;
+}
+
+.review h2 {
+  font-size: 1.5rem;
+  text-align: left;
+  font-weight: bold;
+}
+
+.review .stars {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: gold;
+  text-align: left;
+}
+
+.review p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: left;
+  line-height: 1.5rem;
+}
+
+.review img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem; /* Luft under billedet */
+}
+
+.button-musikanmeldelse {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.button-musikanmeldelse:hover {
+  background-color: #900;
+}
+/* Gør desktop-tekster usynlige på mobil */
+.desktop-text {
+  display: none;
+}
+
+/* Gør mobil-tekster synlige */
+.mobile-text {
+  display: block;
+}
+
+/* ----------------------------------------------------------------------------Asbjoern side styling------------------------------------------- */
+
+/*---- første del af siden styling af billede og overskrift----*/
+.header-container-asbjoern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.centered-header-asbjoern {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.stars {
+  font-size: 1.2rem;
+  color: gold;
+  margin: 0.5rem 0;
+}
+
+/* Hero-sektion */
+.hero-section {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.hero-section img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1rem auto; 
+  margin-top: -11%;
+}
+
+.hero-section .description {
+  margin: 1rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.hero-section .mobile-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  line-height: 1.8; 
+}
+
+/* -------anmeldelse styling------- */
+.reviews-section-asbjoern {
+  background-color: #f9f9f9; 
+  padding: 2rem;
+  border-radius: 10px; 
+  line-height: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.reviews-section-asbjoern h2 {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.review-asbjoern {
+  display: grid;
+  grid-template-columns: 80px 1fr; 
+  gap: 1rem; 
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.review-figure {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; 
+  object-fit: cover;
+}
+
+.review-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-content strong {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.review-content span {
+  font-size: 1rem;
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.review-content p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.5rem;
+}
+
+.se-mere-knap-asbjoern {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.7rem 1.5rem;
+  background-color: #c00;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.se-mere-knap-asbjoern:hover {
+  background-color: #900;
+}
+
+/*------------skriv-din-anmeldelse-asbjoer sektion ---------------- */
+.skriv-din-anmeldelse-asbjoern {
+  padding: 2rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(28, 27, 27) 15%,
+    rgb(26, 25, 25) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  color: white;
+  text-align: center;
+}
+
+.skriv-din-anmeldelse-asbjoern img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+.skriv-din-anmeldelse-asbjoern h2 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: left;
+  margin-top: 2rem;
+  line-height: 1.3; 
+}
+.skriv-din-anmeldelse-asbjoern p {
+  margin-bottom: 0.2rem;
+  text-align: left;
+  line-height: 1.3; 
+}
+
+.skriv-din-anmeldelse-asbjoern .cta-button {
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  background-color: #c00;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+}
+
+/* --------lyt til asbjoern sektion styling ----------- */
+.spotify-section {
+  padding: 2rem;
+  background-color: #f9f9f9; 
+}
+
+.spotify-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spotify-content {
+  text-align: center;
+}
+
+.spotify-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.spotify-content p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: #555;
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+.spotify-image {
+  max-width: 70%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Gør billedet mere fremtrædende */
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cta-button {
+  margin: 1rem;
+  background-color: #c00;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #d62839;
+}
+
+/*-----------------------------------------------------------Frivillig side styling----------------------------------------------------------------*/
+
+/* ------Hero-sektionen det øverste billede og teskt------ */
+.hero_frivillig {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-text h1 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/*---------- Frivillige beskrivelse---------*/
+
+.frivillig-beskrivelse h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.frivillig-sektion p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.frivillig-billede,
+.frivillig-billede_pige {
+  width: 70%;
+  text-align: center;
+  margin-left: 15%;
+  padding: 1rem 0;
+}
+
+/* ----Bliv frivillig sektion----  */
+.cta-section-frivillig {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(28, 27, 27) 15%,
+    rgb(26, 25, 25) 70%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 8px; 
+  margin-top: -15%;
+}
+
+.cta-section-frivillig h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  margin-top: 8rem;
+  text-align: left;
+}
+
+.cta-section-frivillig p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.cta-section-frivillig ul {
+  margin-left: 0; 
+  line-height: 1.6;
+  text-align: left; 
+  list-style-position: outside; 
+}
+
+.cta-section-frivillig ul li {
+  margin-bottom: 0.5rem; 
+}
+
+.frivillig-billede2 {
+  width: 100%; 
+  max-width: 500px; 
+  margin-top: 2rem;
+  display: block; 
+  border-radius: 8px; 
+}
+.cta-frivillig {
+  background-color: #c00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto; 
+  transition: background-color 0.3s ease; 
+}
+
+.cta-frivillig:hover {
+  background-color: #a00; 
+}
+
+/*---------------------------------------------------------støt os sektion styling---------------------------------------------------------------*/
+/*-----hero sektion styling_---*/
+.header-container-stoetos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.header-container-stoetos h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.hero-section-stoetos img {
+  width: 100%;
+  height: auto;
+  margin: 1rem auto; 
+}
+
+/*-----Hvad der sker med Radar og ustattelig mødested styling ---*/
+.section-stoet-os-tekst {
+  margin-bottom: 2rem;
+}
+
+.text-content-stoet-os h2,
+.section-stoet-os-tekst2 h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.text-content-stoet-os p,
+.section-stoet-os-tekst2 p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.text-content-stoet-os img,
+.section-stoet-os-tekst2 img {
+  width: 80%;
+  padding: 1rem 0; 
+  margin-left: 2.5rem;
+
+  /*-------styling af cta sektion støt os --------*/
+}
+.stoetos-cta {
+  display: grid;
+  grid-template-areas:
+    "text"
+    "button"; /* Tekst, billede og knap i rækkefølge på mobil */
+  grid-template-columns: 1fr;
+  line-height: 1.8; 
+  padding: 2rem 1rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(0, 0, 0) 15%,
+    rgb(0, 0, 0) 70%,
+    rgba(0, 0, 0, 0.395) 100%
+  );
+  color: white;
+}
+
+/* Typografi */
+.stoetos-cta h2 {
+  font-size: 1.8rem; 
+  text-align: left; 
+  margin-top: 6rem;
+  margin-bottom: 1rem; 
+  font-weight: bold; 
+  margin-left: 1rem;
+}
+
+.stoetos-cta p {
+  font-size: 0.8rem; 
+  text-align: left;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  margin-right: 1.3rem;
+}
+.stoet_os_punkter p {
+  font-size: 0.8rem; 
+  text-align: left;
+  margin-bottom: 1.5rem; 
+  margin-left: 2rem;
+  margin-right: 1.3rem;
+}
+
+.stoet_radar_knap {
+  background-color: #c00;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto; 
+  margin-bottom: 5rem;
+  transition: background-color 0.3s ease; 
+}
+
+.stoet_radar_knap:hover {
+  background-color: #a00; 
+}
+
+/*---------------------------------------------------------------------------styling af event side -------------------------------------------*/
+/*----- overskrift og linjer styling---- */
+.header-container-event {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 1rem;
+  padding: 1rem 0; 
+}
+
+.line-event {
+  flex-grow: 1; 
+  height: 1px; 
+  background-color: black; 
+}
+
+.centered-header-event {
+  font-size: 1.5rem;
+  font-weight: bold; 
+  text-align: center; 
+  white-space: nowrap; 
+}
+
+/*----- de forskellige events styling---- */
+.event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+/* Grid Layout for Each Event */
+.event-item {
+  display: grid;
+  grid-template-areas:
+    "headline"
+    "text"
+    "image"
+    "button";
+  grid-template-columns: 1fr;
+  line-height: 1.8; 
+  padding: 2rem 1rem;
+  color: rgb(14, 14, 14);
+  border-radius: 8px;
+}
+
+.event-title {
+  grid-area: headline;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.event-description {
+  grid-area: text;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.event-image {
+  grid-area: image;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  margin: 0 auto; 
+}
+
+.read-more-button {
+  margin-top: 2rem;
+  grid-area: button;
+  background-color: #c00;
+  color: rgb(251, 249, 249);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  justify-self: center; 
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #a00;
+  color: white;
+}
+.separator {
+  width: 100%; 
+  height: 1px; 
+  background-color: #ddd; 
+  padding: 0;
+  margin: 0;
+}
+
+
+
+
+/*---------------------------------------------------Styling af Aphaca´s historie side ----------------------------------------------------------/*
+/* ---Overskrift-- */
+.article-header {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+/* --Hero Billede-- */
+.article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* ----Generel tekst sektion uden overskrift--- */
+.article-section {
+    line-height: 1.5rem;
+    margin: 0 1.5rem; /* Skaber luft på højre og venstre side */
+}
+
+/*--- Undersektioner med overskifter---  */
+.article-subsection, .article-image-player {
+    margin: 0 1.5rem; /* Skaber luft på højre og venstre side */
+    line-height: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    
+}
+.article-subsection h2, .article-image-player h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.article-subsection p, .article-image-player p {
+    margin-bottom: 1rem;
+}
+
+/*-------- Spotify lyt til radar sektion--- */
+.music-player {
+    width: 50%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    margin-left: 20%;
+}
+
+/*----- Lyt her-knap styling----- */
+.listen-butto-article {
+    display: block;
+    width: 25%;
+    padding: 0.75rem;
+    background-color: #c00;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 32%;
+    margin-top: 2rem;
+}
+
+.listen-butto-article:hover {
+    background-color: #a00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------Styling så det passer computer----------------------------------*/
+
+
+
+/*------------------------------------ Desktop styling af navigation--------------------- */
+@media (min-width: 768px) {
+  .burger-menu {
+    display: none; /* Skjuler burger-menuen på desktop */
+  }
+
+  .nav-links {
+    display: flex; /* Vises som en horisontal menu */
+    flex-direction: row;
+    position: static; /* Ingen overlap på desktop */
+    width: auto;
+  }
+
+  .nav-item {
+    padding: 10px;
+  }
+
+  .nav-item .dropdown {
+    position: absolute; /* Dropdown vises som pop ned-menu */
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 150px;
+  }
+
+  .nav-item:hover .dropdown {
+    display: flex; /* Vises ved hover */
+  }
+
+  .nav-item:last-child .dropdown {
+    right: 0; /* gør sådan at dropdown ikke ryger ud i siden */
+    left: auto;
+  }
+
+
+  /*------------------------------------------------------styling af forsiden -------------------------------------------------------*/
+  /* Hero-sektion */
+  .hero img {
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* -----------Bliv Frivillig sektion styling ---------- */
+  .section-frivillig {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding: 2rem; 
+    align-items: start; 
+  }
+
+  .section-frivillig .text-content {
+    grid-column: 1; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: start; 
+    gap: 1rem; 
+  }
+
+  .section-frivillig h2 {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    font-weight: bold;
+    margin-top: 3rem;
+  }
+
+  .section-frivillig p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333; 
+    margin-bottom: 1rem; 
+  }
+
+  .desktop-only {
+    display: block; 
+  }
+
+  .section-frivillig img {
+    margin-top: 8rem;
+    grid-column: 2; 
+    max-width: 100%; 
+    height: 70%; 
+    justify-self: center;
+  }
+
+  .button_frivillig {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    width: 20rem;
+    text-align: center;
+    align-self: flex-start; 
+  }
+
+  .button_frivillig:hover {
+    background-color: #900;
+  }
+  /*--------------------- kommende koncerter styling--------------------*/
+
+  .slider-container {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem; 
+  }
+
+  .koncert {
+    max-width: 40%; 
+  }
+
+  .button_kommende_koncerter {
+    display: block;
+    margin: 2rem auto 0;
+    text-align: center;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    background-color: #f6071b;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 89%;
+    border-radius: 50px;
+  }
+  .slider-container {
+    display: flex; 
+    overflow-x: auto; 
+    gap: 1rem; 
+    list-style: none; 
+    padding: 1rem 0;
+    scrollbar-width: none; 
+    margin-top: 1rem;
+  }
+
+  .slider-container::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .section-koncerter h2 {
+    margin-top: 0.8rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+
+  /* -----------Anmeld(feedback) styling ---------- */
+
+  .section-feedback {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 2rem; 
+    align-items: start; 
+    padding: 2rem;
+  }
+
+  .section-feedback img {
+    grid-column: 1; 
+    justify-self: center; 
+    max-width: 90%;
+    height: auto;
+    margin-top: 4rem;
+  }
+
+  .section-feedback .feedback-text {
+    grid-column: 2; 
+    margin-top: 3rem;
+  }
+  .section-feedback p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333; 
+    margin-bottom: 1rem; 
+  }
+
+  .section-feedback h2 {
+    font-size: 2rem; 
+    margin-bottom: 1.5rem; 
+    font-weight: bold;
+    margin-top: 4rem;
+  }
+
+  .section-feedback .desktop-only {
+    display: block; 
+    margin-top: 1rem;
+    font-size: 1rem; 
+    line-height: 1.8; 
+    color: #333; 
+  }
+  .section-feedback .button_feedback {
+    justify-self: start; 
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    text-align: center;
+    max-width: 200px;
+  }
+  .section-feedback .button_feedback:hover {
+    background-color: #900;
+  }
+
+  /*------------ godsbanen styling --------*/
+
+  .section-godsbanen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem; 
+    align-items: start; 
+    padding: 4rem 3rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      #c00 15%,
+      #c00 70%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  .section-godsbanen img {
+    grid-column: 2; 
+    justify-self: center; 
+    max-width: 90%; 
+    margin-top: 1rem; 
+    height: 20rem;
+    width: 60rem;
+  }
+
+  .section-godsbanen h2 {
+    font-size: 2rem; 
+    margin-top: 5rem;
+    margin-bottom: 1.5rem; 
+    font-weight: bold;
+    color: white; 
+  }
+
+  .section-godsbanen p {
+    grid-column: 1; 
+    font-size: 1rem; 
+    line-height: 1.6;
+    color: #f0e5e5; 
+    margin-bottom: 1rem;
+  }
+  .section-godsbanen .button_godsbanen {
+    grid-column: 1; 
+    align-self: start; 
+    margin-top: -10rem; 
+    padding: 1rem 3rem;
+  }
+
+  /*-------------------------------------------------------- styling af musikanmeldelse side-------------------------------------------------------*/
+
+  .header-container {
+    margin-bottom: 4rem;
+  }
+
+  .header-container h1 {
+    font-size: xx-large;
+  }
+
+  .review {
+    display: grid; 
+    grid-template-columns: 45% 55%; 
+    gap: 2rem;
+    margin-bottom: 3rem; 
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 2rem;
+    max-width: 1200px; 
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  .review img {
+    grid-column: 1; 
+    height: auto; 
+    width: 100%;
+    margin-left: 1rem;
+  }
+
+  .review .text-container {
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1%;
+  }
+
+  .review p {
+    line-height: 1.5rem;
+    font-size: 1rem; 
+    color: #333; 
+  }
+
+  .stars {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+  }
+
+  .button-musikanmeldelse {
+    padding: 0.5rem 1rem; 
+    margin-left: 65%;
+  }
+  .desktop-text {
+    display: block; 
+  }
+  .mobile-text {
+    display: none; 
+  }
+
+  /*---------------------------------------------------------------- styling af asbjørn side-----------------------------------------*/
+  /*------- styling af første sektion af billede, stjerner, og tekst -------*/
+  .hero-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 2rem; 
+    text-align: center;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; 
+  }
+
+  .hero-section img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+
+  .hero-section .desktop-text {
+    display: block; 
+    max-width: 1000px; 
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .header-container-asbjoern h1 {
+    margin-top: 2rem;
+    font-size: 2.9rem;
+    font-weight: bolder;
+    text-align: center;
+  }
+  .stars {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: bolder;
+  }
+
+  .hero-section .mobile-text {
+    display: none; 
+  }
+  /*-----------styling anmedelse sektion  -------*/
+
+  .review-asbjoern .review-meta img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .review-asbjoern strong {
+    font-size: 1.2rem;
+  }
+
+  .cta-section-asbjoern {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+  }
+
+  .cta-section-asbjoern img {
+    max-width: 40%;
+    border-radius: 10px;
+  }
+
+  .se-mere-knap-asbjoern {
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
+    margin-left: 80%;
+  }
+  .skriv-din-anmeldelse-asbjoern {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding: 2rem; 
+    align-items: start; 
+  }
+
+  .skriv-din-anmeldelse-asbjoern h2 {
+    font-size: 2rem; 
+    margin-bottom: -5rem; 
+    font-weight: bold;
+    margin-top: 4rem;
+  }
+
+  .skriv-din-anmeldelse-asbjoern p {
+    font-size: 1rem; 
+    line-height: 1.6; 
+    margin-bottom: 1rem; 
+    margin-top: 4rem;
+  }
+  .skriv-din-anmeldelse-asbjoer img {
+    grid-column: 2; 
+    max-width: 100%; /* Sørger for, at billedet ikke overskrider sin kolonne */
+    border-radius: 10px; 
+  }
+  .cta-button {
+    grid-column: 2;
+    padding: 0.75rem 1.5rem;
+    background-color: #c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    width: 20rem;
+    margin-left: 50%;
+    margin-bottom: 4rem;
+  }
+
+  /*----------------- Lyt til Asbjoern musik -------------------------*/
+
+  .spotify-section {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: start; 
+    gap: 2rem;
+  }
+
+  .spotify-container {
+    display: contents; /* Sørger for, at grid-strukturen er direkte inde i sektionen */
+  }
+
+  .spotify-content {
+    grid-column: 2; 
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem; 
+  }
+
+  .spotify-image {
+    grid-column: 1; 
+    width: 50%; 
+    align-self: center; 
+    justify-self: center;
+    margin-top: -20rem;
+  }
+
+  .spotify-content h2 {
+    margin-top: 6rem;
+    font-size: 2rem; 
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .spotify-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    margin-right: 7rem;
+  }
+
+  .cta-button {
+    grid: 1;
+    background-color: #c00;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 1rem; 
+    width: fit-content;
+    margin-left: 10rem;
+  }
+  /*----------------------------------- frivillig side --------------------*/
+  /* Desktop Layout - Juster frivillig-beskrivelse */
+  .frivillig-sektion {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding: 2rem; 
+    align-items: start; 
+  }
+  .frivillig-billede {
+    grid-column: 2; 
+    justify-self: right; 
+    width: 80%; 
+  }
+  .frivillig-tekst {
+    grid-column: 1;
+    margin-bottom: 10rem;
+    margin-left: 5%;
+    line-height: 1.5rem;
+  }
+
+  .frivillig-beskrivelse h2 {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    font-weight: bold;
+    margin-top: 3rem;
+    margin-left: 6.5%;
+  }
+  .frivillig_tekst2 {
+    grid-column: 2;
+    margin-bottom: 20rem;
+    padding-left: 2rem;
+    padding-right: 4rem;
+    line-height: 1.5rem;
+    margin-top: 5rem;
+  }
+  .frivillig-billede-container2 {
+    grid-column: 1; 
+    justify-self: left; 
+    width: 100%; 
+  }
+
+  /* ----Bliv frivillig sektion----  */
+  .cta-section-frivillig {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+    padding: 4rem 8rem;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(28, 27, 27) 15%,
+      rgb(26, 25, 25) 70%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    color: white;
+    border-radius: 8px;
+  }
+
+  .cta-section-frivillig ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .cta-section-frivillig ul li::before {
+    color: #c00; 
+    font-weight: bold;
+  }
+
+  .cta-section-frivillig img {
+    grid-column: 2; 
+    max-width: 800px; 
+    width: 100%; 
+    border-radius: 8px;
+    margin-top: -40%;
+  }
+
+  .cta-section-frivillig h2,
+  .cta-section-frivillig p,
+  .cta-section-frivillig ul {
+    grid-column: 1;
+  }
+
+  .cta-frivillig {
+    grid-column: 2;
+    padding: 0.75rem 1.5rem;
+    background-color: #c00;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    width: 200px;
+    text-align: center;
+    margin: 1rem auto 0 auto;
+    margin-top: -30%;
+  }
+
+  /*--------------------------------------------------------------------------------Styling af støt os side --------------------------------------*/
+
+  .header-container-stoetos h1 {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+
+  /*-------Styling af støt os side først sektion ------*/
+  .text-content-stoet-os {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding: 2rem; 
+    align-items: start; 
+  }
+
+  .text-content-stoet-os h2 {
+    grid-column: 1;
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    font-weight: bold;
+    margin-top: 3rem;
+  }
+
+  .text-content-stoet-os p {
+    grid-column: 1;
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333; 
+    margin-bottom: 1rem; 
+  }
+  .text-content-stoet-os img {
+    grid-column: 2;
+    margin-top: -6rem;
+  }
+  /*-------Styling af støt os side anden sektion ------*/
+  .text-content-stoet-os2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
+    padding: 2rem; 
+    align-items: start; 
+  }
+  .text-content-stoet-os2 h2 {
+    grid-column: 2;
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    font-weight: bold;
+    margin-top: 3rem;
+  }
+
+  .text-content-stoet-os2 p {
+    grid-column: 2;
+    font-size: 1rem; 
+    line-height: 1.6; 
+    color: #333; 
+    margin-bottom: 1rem; 
+  }
+  .text-content-stoet-os2 img {
+    grid-column: 1;
+    margin-top: -33rem;
+  }
+  .stoet_radar_knap {
+    margin-left: 80rem;
+  }
+  .stoetos-cta {
+    padding: 3rem;
+  }
+
+
+/*----------------------------------------------------------------------Styling af event sektion -------------------------------------------------*/
+
+  .centered-header-event {
+    font-size: 2.5rem; /* Gør overskriften større på større skærme */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.line-event {
+    width: 90%; /* Øg bredden af linjen på større skærme */
+}
+
+  .event-container {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.event-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    align-items: center;
+    gap: 2rem;
+}
+
+.event-title {
+    grid-column: 2 / span 1; 
+    text-align: left;
+}
+
+.event-description {
+    grid-column: 2 / span 1;
+    text-align: left;
+    margin-top:-2rem
+}
+
+.read-more-button {
+    grid-column: 2 / span 1; 
+    margin-top: -5rem;
+    margin-left: 70%;
+}
+
+.event-image {
+    grid-column: 1 / span 1;
+    width: 100%;
+    max-width: 800px; 
+    height: auto;
+    border-radius: 8px;
+    margin-top: -15rem;
+}
+
+
+
+/*------------------------------------------------------------------ Styling af aphaca´s historie -------------------------------------*/
+
+
+.article-section p, .article-subsection p {
+    font-size: 1rem; 
+    line-height: 1.8; 
+    padding: 2rem 20rem; 
+  }
+  .article-subsection h2 {
+    font-size: 2rem; /* Standard tekststørrelse */
+    line-height: 1.8; /* Forbedrer læsbarhed */
+    padding:0rem 20rem; 
+    margin-top: -2rem;
+    
+  }
+.article-image-player {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* To kolonner */
+    gap: 2rem; /* Afstand mellem kolonner */
+    padding: 2rem; /* Giver sektionen lidt luft */
+    align-items: start; /* Sørger for at indholdet ikke overlapper */
+    
+  }
+
+  .article-header{
+    font-size: 3rem; 
+    margin-bottom: 2rem;
+  }
+
+  .article-image-player h2 {
+    grid-column: 1;
+    font-size: 2rem; /* Gør overskriften større */
+    margin-bottom: -5rem; /* Tilføjer plads under overskriften */
+    font-weight: bold;
+    margin-top: 4rem;
+    padding:2rem 2rem;
+    margin-left: 30%;
+  }
+
+  .article-image-player p {
+    grid-column: 1;
+    font-size: 1rem; /* Standard tekststørrelse */
+    line-height: 1.6; /* Forbedrer læsbarhed */
+    margin-bottom: 1rem; /* Afstand under hver paragraf */
+    margin-top: 4rem;
+    padding:0rem 2rem;
+    margin-left: 30%;
+  }
+  .article-image-player img {
+    grid-column: 2; /* Placerer billedet i den anden kolonne */
+    max-width: 150%; /* Sørger for, at billedet ikke overskrider sin kolonne */
+    border-radius: 10px; /* Afrundede hjørner */
+    margin-top: -5rem;
+  }
+
+  .listen-butto-article{
+    margin-top: -15rem;
+    margin-left: 50%;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* ------------------------ FOOTER ------------------------ */
+  .footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

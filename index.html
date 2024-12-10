@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forside </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="javascript/script.js" defer></script>
+    <!--Connected til google fonts og icons-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=KoHo:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <!---------------------- body starter ---------------------->
+  <body>
+    <!---------------------- header starter ---------------------->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="index.html"><img src="img/Radar logo.png" alt="Logo" /></a>
+        </div>
+        <div class="burger-menu" id="burger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item">
+            <a href="#">Del din oplevelse</a>
+            <ul class="dropdown">
+              <li><a href="musikanmeldelse.html">Publikums anmeldelser</a></li>
+              <li><a href="#">Del minder & ideer </a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#">En del af Radar</a>
+            <ul class="dropdown">
+              <li><a href="frivillig.html">Bliv frivillig </a></li>
+              <li><a href="Stoetos.html">Støt Radar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#">Radar puls </a>
+            <ul class="dropdown">
+              <li><a href="">Kommende events</a></li>
+              <li><a href="event.html">Historier fra scenen </a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-------------------- main starter ---------------------->
+    <main>
+      <!-- Forside billede -->
+      <section class="hero">
+        <figure>
+          <img src="img/forside.jpeg" alt="Opdag Aarhus' Skjulte Musikperle" />
+        </figure>
+      </section>
+
+      <!-- Sektion 1 bliove frivillig -->
+      <section class="section-frivillig">
+        <div class="text-content">
+          <h2>
+            Bliv frivillig – Vær med til at skabe Aarhus' mest unikke
+            koncertoplevelser
+          </h2>
+          <p>
+            Bliv en del af fællesskabet bag Aarhus' mest intime koncertsted som
+            frivillig på Radar. Du støtter lokale kunstnere, oplever live musik
+            tæt på og møder andre med samme passion for kultur.
+          </p>
+          <!-- Ekstra tekst, kun synlig på desktop -->
+          <p class="desktop-only">
+            Vil du være en del af fællesskabet bag Aarhus' mest intime
+            koncertsted? Som frivillig på Radar får du mulighed for at støtte
+            lokale kunstnere, opleve live musik helt tæt på og møde andre, der
+            deler din passion for kultur og musik.
+          </p>
+          <p class="desktop-only">
+            Det handler ikke kun om opgaver; det handler om at gøre en forskel.
+            Vi tilbyder gratis koncerter, sociale arrangementer og en oplevelse,
+            der udvikler både dig og Radars musikscene.
+          </p>
+        </div>
+        <img src="img/frivillige_billede.png" alt="Frivillig på Radar" />
+        <a href="#" class="button_frivillig">Bliv frivillig nu</a>
+      </section>
+
+      <!-- Sektion 2: Kommende koncerter -->
+      <section class="section-koncerter">
+        <h2>Kommende koncerter</h2>
+        <ul class="slider-container">
+          <li class="koncert">
+            <figure>
+              <img src="img/sorthandsk.jpg" alt="SORTHANDBK" />
+              <figcaption>
+                <h3>SORTHANDBK</h3>
+                <time datetime="2024-12-07">07 Dec</time>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="koncert">
+            <figure>
+              <img src="img/gorgeous.jpg" alt="GORGEOUS" />
+              <figcaption>
+                <h3>GORGEOUS</h3>
+                <time datetime="2024-02-06">06 Feb</time>
+              </figcaption>
+            </figure>
+          </li>
+          <li class="koncert">
+            <figure>
+              <img src="img/bissesvinet.jpg" alt="Bissesvinet" />
+              <figcaption>
+                <h3>Bissesvinet</h3>
+                <time datetime="2024-03-12">12 Mar</time>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+        <a href="#" class="button_kommende_koncerter">Se mere</a>
+      </section>
+
+      <!-- Sektion din oplevelse på radar -->
+      <section class="section-feedback">
+        <img
+          src="img/anmeld_kunstner_billede.jpg"
+          alt="Publikum til koncert på Radar"
+        />
+        <div class="feedback-content">
+          <div class="feedback-text">
+            <h2>Fortæl os om din oplevelse – Anmeld kunstnerne på Radar</h2>
+            <p>
+              Har du haft en uforglemmelig oplevelse på Radar? Del din mening og
+              vær med til at støtte de kunstnere, der gør Radars musikscene så
+              unik. Din anmeldelse hjælper både kunstnere og andre musikelskere
+              med at opdage nye favoritter og skaber en stærkere forbindelse
+              mellem publikum og musikken.
+            </p>
+            <p class="desktop-only">
+              Ved at dele din oplevelse bidrager du til at give kunstnere
+              værdifuld feedback, der kan hjælpe dem med at udvikle sig og nå
+              endnu flere mennesker. Samtidig inspirerer dine ord andre til at
+              tage del i de autentiske og nærværende koncertoplevelser, som
+              Radar er kendt for.
+            </p>
+            <a href="#" class="button_feedback">Anmeld kunstnerne nu</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sektion godbanen -->
+      <section class="section-godsbanen">
+        <h2>Oplev Radar – En kreativ oase på Godsbanen</h2>
+        <p>
+          Midt i Godsbanens pulserende liv finder du Radar – et spillested, der
+          hylder undergrunds musik og kreative talenter. Oplev, hvordan vi
+          samler kunstnere og publikum i et unikt fællesskab. Radar er mere end
+          musik – det er en del af Aarhus’ kreative DNA.
+        </p>
+        <img src="img/godsbanen.jpeg" alt="Godsbanen" />
+        <a href="#" class="button_godsbanen">Læs om Radar</a>
+      </section>
+    </main>
+    <!---------------------- Footer starter ---------------------->
+    <footer class="footer-container">
+      <!-- Rader info -->
+      <!-- både class og id så de kan styles individuelt i media queries -->
+      <section class="footer-sektioner" id="rader">
+        <h1 class="footer-overskrift">Radar</h1>
+        <p>
+          Karen Wegeners Gade 6
+          <br />
+          <br />
+          8000 Aarhus C
+        </p>
+      </section>
+
+      <!-- kontakt os information  -->
+      <!-- både class og id så de kan styles individuelt i media queries -->
+      <section class="footer-sektioner" id="kontakos">
+        <h1 class="footer-overskrift">Kontakt os</h1>
+        <p>
+          Bookingforespørgsler:  booking(@)radarlive.dk
+          <br />
+          <br />
+          Generel kontakt: 
+          <br />
+          kontakt(@)radarlive.dk
+        </p>
+      </section>
+
+      <!-- FAQ til større skærme -->
+      <section class="footer-sektioner" id="FAQ">
+        <h1 class="footer-overskrift">FAQ</h1>
+        <p>
+          Hvem er vi?
+          <br />
+          <br />
+          Hvor ligger Radar
+          <br />
+          <br />
+          Indgang og parkering
+          <br />
+          <br />
+          Billetpriser
+        </p>
+        <br />
+      </section>
+
+      <!-- Connect info -->
+      <section class="footer-sektioner">
+        <h1 class="footer-overskrift">Følg os</h1>
+        <p class="some-links">
+          <a href="https://www.instagram.com/raastedstore/">Instagram</a>
+          <br />
+          <br />
+          <a href="https://www.facebook.com/raastedstore">Facebook</a>
+          <br />
+          <br />
+          <a href="https://www.facebook.com/raastedstore">Spotify</a>
+          <br />
+          <br />
+          <a href="https://www.facebook.com/raastedstore">Youtube</a>
+        </p>
+      </section>
+
+      <!-- Nyhedsbrev info -->
+      <section class="footer-sektioner">
+        <h1 class="footer-overskrift">Nyhedsbrev</h1>
+        <form>
+          <input
+            type="email"
+            placeholder="Skriv din e-mail"
+            class="email-felt"
+            required
+          />
+        </form>
+      </section>
+    </footer>
+  </body>
+</html>
