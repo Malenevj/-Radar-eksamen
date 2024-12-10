@@ -61,6 +61,18 @@ table {
 /* ------------------------------------------------------------------- min css starter------------------------------------------- */
 
 /* ------------------------------------------Navbar styling---------------------------- */
+
+header {
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  top:0;
+
+}
+
+main {
+  margin-top: 65px;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -68,6 +80,7 @@ table {
   background-color: #1b1a1a;
   color: white;
   padding: 10px 20px;
+  
 }
 
 .logo img {
@@ -146,6 +159,7 @@ table {
 .hero img {
   width: 100%;
   height: auto;
+
 }
 /*-------------styling af sektioner---------*/
 .section-frivillig,
@@ -427,26 +441,30 @@ table {
   padding: 0 1rem; 
 }
 
-.line {
+.line-asbjørn, .line-abjørn {
   flex-grow: 1; 
   height: 2px; 
   background-color: black; 
-}
+  margin-top: 2rem;
 
+}
+ 
 .centered-header {
   font-size: 1.5rem; /* Gør teksten større */
   font-weight: bold;
-  text-align: center; /* Sørger for, at teksten er centreret */
-  margin: 0; /* Fjerner standard margin */
-  white-space: nowrap; /* Sørger for, at teksten ikke brydes */
+  text-align: center; 
+  white-space: nowrap; 
+  margin-top: 2rem;
+
+  
 }
 .review {
   margin-bottom: 2rem;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  padding: 1rem; /* Luft på indersiden af containeren */
-  padding-left: 1rem; /* Ekstra luft til venstre */
-  padding-right: 1rem; /* Ekstra luft til højre */
+  padding: 1rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
 }
 
 .review {
@@ -1063,9 +1081,14 @@ table {
     text-align: center;
     font-weight: bold;
     margin-bottom: 1rem;
-    margin-top: 2rem;
+    
+
+    
 }
 
+.article-container h1{
+  margin-top: 6rem;
+}
 /* --Hero Billede-- */
 .article-image {
     width: 100%;
@@ -1128,8 +1151,91 @@ table {
 }
 
 
+/*-------------------------------------------------------------------------Styling af kommende events----------------------------------*/
+/* Basisstyling for container */
+.kommende-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Afstand mellem sektioner */
+  padding: 1rem; /* Indrykning fra kanten */
+  background-color: #f9f9f9;
+}
 
+/* Styling for hver event */
+.kommende-events {
+  display: grid;
+  grid-template-areas:
+      "image"
+      "content";
+  gap: 1rem;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+/* Billedet fylder hele toppen */
+.kommende-event-billede {
+  grid-area: image;
+  width: 100%;
+  height: auto;
+  object-fit: cover; 
+}
+
+/* Indholdet */
+.kommende-events-content{
+  grid-area: content;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; 
+  line-height: 1.5rem;
+
+}
+.kommende-events-content h2{
+  font-weight: bold;
+  font-size: 1.2rem;
+  
+}
+
+/* Footer (dato og knap) */
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Dato styling */
+.event-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(11, 11, 11);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+}
+
+/* Knap styling */
+.buy-button {
+  background-color: #c00;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #a00;
+}
 
 
 
@@ -1405,6 +1511,7 @@ table {
     align-self: start; 
     margin-top: -10rem; 
     padding: 1rem 3rem;
+    background-color: rgb(117, 14, 14)
   }
 
   /*-------------------------------------------------------- styling af musikanmeldelse side-------------------------------------------------------*/
@@ -1922,11 +2029,32 @@ table {
   }
 
 
+/*----------------------------------------------------------------Styling af kommende koncerter-----------------------------------------*/
+/* Grid container for events */
+.kommende-events {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 1 del til billede, 2 dele til tekst */
+  gap: 2rem;
+  align-items: start;
+}
 
+.kommende-events-content {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: -15rem;
+}
 
+.kommende-event-billede {
+  grid-column: 1; /* Placer billedet i første kolonne */
+  width: 100%; /* Fyld kolonnen */
+  height: auto; /* Bevar billedets proportioner */
+  border-radius: 8px; /* Gør billedet pænt afrundet */
+  object-fit: cover; /* Sørg for, at billedet fylder sin container */
+  margin-top: 5rem;
 
-
-
+}
 
 
 
