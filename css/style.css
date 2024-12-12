@@ -135,8 +135,13 @@ main {
   border-radius: 4px;
 }
 
-.nav-item:hover .dropdown {
-  display: flex; 
+.dropdown {
+  display: none;
+}
+
+.dropdown.active {
+  display: flex;
+  flex-direction: column;
 }
 
 .nav-item .dropdown li {
@@ -380,56 +385,7 @@ main {
   background-color: rgb(226, 67, 67);
 }
 
-/* Footer baggrund og generel tekstfarve */
-.footer-container {
-  display: grid;
-  gap: 3rem;
-  grid-template-columns: 1fr;
-  background-color: #1b1a1a;
-  color: white; 
-  padding: 2rem; 
-}
 
-/*-------------------------------------------- Generel styling for footer sektioner-------------------------------------------------------- */
-.footer-sektioner {
-  margin-left: 5%; /* Flytter sektioner lidt ind fra kanten */
-}
-
-/* Overskrifter */
-.footer-overskrift {
-  font-size: x-large;
-  padding-bottom: 1rem; 
-  font-weight: 600; 
-  color: white; 
-}
-
-/* Links i footer */
-.some-links a {
-  text-decoration: none; 
-  color: white; 
-}
-
-.some-links a:hover {
-  color: #aaa; 
-}
-
-/* Tilføj hvid kant og hvid tekst til email felt */
-.email-felt {
-  margin-top: 1rem;
-  padding: 0.75rem;
-  border: 2px solid white;
-  font-size: 1rem;
-  font-family: inter, sans-serif;
-  color: white; 
-  background-color: transparent; /* Gør baggrund gennemsigtig */
-  max-width: 100%;
-}
-
-/* Tilføj hover-effekt til email felt */
-.email-felt:focus {
-  border-color: #aaa; 
-  outline: none; 
-}
 /* --------------------------------------------------------------musikanmeldelse side styling--------------------------------------------------- */
 .header-container {
   display: flex;
@@ -1072,8 +1028,6 @@ main {
 }
 
 
-
-
 /*---------------------------------------------------Styling af Aphaca´s historie side ----------------------------------------------------------/*
 /* ---Overskrift-- */
 .article-header {
@@ -1081,9 +1035,6 @@ main {
     text-align: center;
     font-weight: bold;
     margin-bottom: 1rem;
-    
-
-    
 }
 
 .article-container h1{
@@ -1237,29 +1188,60 @@ main {
   background-color: #a00;
 }
 
+/*-------------------------------------------- Generel styling for footer sektioner-------------------------------------------------------- */
+/* Footer baggrund og generel tekstfarve */
+.footer-container {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: 1fr;
+  background-color: #1b1a1a;
+  color: white; 
+  padding: 2rem; 
+}
 
 
 
+.footer-sektioner {
+  margin-left: 5%; /* Flytter sektioner lidt ind fra kanten */
+}
 
+/* Overskrifter */
+.footer-overskrift {
+  font-size: x-large;
+  padding-bottom: 1rem; 
+  font-weight: 600; 
+  color: white; 
+}
 
+/* Links i footer */
+.some-links a {
+  text-decoration: none; 
+  color: white; 
+}
 
+.some-links a:hover {
+  color: #aaa; 
+}
 
+/* Tilføj hvid kant og hvid tekst til email felt */
+.email-felt {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 2px solid white;
+  font-size: 1rem;
+  font-family: inter, sans-serif;
+  color: white; 
+  background-color: transparent; /* Gør baggrund gennemsigtig */
+  max-width: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/* Tilføj hover-effekt til email felt */
+.email-felt:focus {
+  border-color: #aaa; 
+  outline: none; 
+}
 
 /*-------------------------------------------------------------------------Styling så det passer computer----------------------------------*/
-
-
 
 /*------------------------------------ Desktop styling af navigation--------------------- */
 @media (min-width: 768px) {
@@ -1730,7 +1712,6 @@ main {
   }
 
   .cta-button {
-    grid: 1;
     background-color: #c00;
     color: white;
     border: none;
@@ -2055,15 +2036,7 @@ main {
   margin-top: 5rem;
 
 }
-
-
-
-
-
-
-
-
-  /* ------------------------ FOOTER ------------------------ */
+  /* -------------------------------------------------------------------------------- FOOTER -------------------------- */
   .footer-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
